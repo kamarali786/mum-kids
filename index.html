@@ -7,25 +7,198 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Mumkind - Coming Soon</title>
     <link rel="shortcut icon" href="./assets/images/logo.png" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/css?family=Karla:400,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Karla:wght@400;700&family=Pacifico&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.materialdesignicons.com/4.8.95/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="./assets/css/bd-coming-soon.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, #fff5f7 0%, #e0f7fa 100%);
+            color: #333;
+            font-family: 'Karla', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .navbar-brand img {
+            height: 150px;
+            transition: transform 0.3s ease;
+        }
+
+        .navbar-brand img:hover {
+            transform: scale(1.1);
+        }
+
+        .navbar-dark .navbar-text a {
+            color: #ff6f91;
+        }
+
+        .navbar-dark .navbar-text a:focus,
+        .navbar-dark .navbar-text a:hover {
+            color: #ff6f91;
+        }
+
+        a:hover {
+
+            text-decoration: none;
+        }
+
+        .page-title {
+            color: #ff6f91;
+            font-family: 'Pacifico', cursive;
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .page-description {
+            font-size: 1.3rem;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 2rem;
+        }
+
+        .decoration {
+            position: absolute;
+            font-size: 2.5rem;
+            opacity: 0.6;
+            animation: float 4s infinite ease-in-out;
+        }
+
+        .toy-1 {
+            top: 15%;
+            left: 5%;
+        }
+
+        .toy-2 {
+            top: 25%;
+            right: 5%;
+        }
+
+        .toy-3 {
+            bottom: 15%;
+            left: 10%;
+        }
+
+        .footer-social-links a {
+            color: #ff6f91;
+            font-size: 1.8rem;
+            margin: 0 12px;
+            transition: transform 0.3s, color 0.3s;
+        }
+
+        .footer-social-links a:hover {
+            color: #ff4081;
+            transform: scale(1.2);
+        }
+
+        .subscription-form {
+            margin-top: 2.5rem;
+        }
+
+        .subscription-form input {
+            padding: 0.7rem;
+            border: 2px solid #ff6f91;
+            border-radius: 25px;
+            outline: none;
+            width: 250px;
+        }
+
+        .subscription-form button {
+            padding: 0.7rem 1.5rem;
+            background: linear-gradient(90deg, #ff6f91 0%, #ff4081 100%);
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .subscription-form button:hover {
+            background: linear-gradient(90deg, #ff4081 0%, #ff6f91 100%);
+        }
+
+        .countdown {
+            margin-top: 2rem;
+            font-size: 1.5rem;
+            color: #ff6f91;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .page-title {
+                font-size: 2.2rem;
+            }
+
+            .page-description {
+                font-size: 1.1rem;
+            }
+
+            .navbar-brand img {
+                height: 80px;
+            }
+
+            .subscription-form input {
+                width: 200px;
+            }
+        }
+    </style>
+    <script>
+        function startCountdown() {
+            const launchDate = new Date("October 1, 2025 00:00:00").getTime();
+            const countdown = setInterval(() => {
+                const now = new Date().getTime();
+                const distance = launchDate - now;
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                document.querySelector('.countdown').innerHTML = Launching in: ${ days }d ${ hours }h ${ minutes }m ${ seconds } s;
+                if (distance < 0) {
+                    clearInterval(countdown);
+                    document.querySelector('.countdown').innerHTML = "We’re Live!";
+                }
+            }, 1000);
+        }
+        window.onload = startCountdown;
+    </script>
 </head>
 
 <body class="min-vh-100 d-flex flex-column">
     <!-- Decorative elements -->
     <div class="decoration toy-1">🧸</div>
-    <div class="decoration toy-2">🎈</div>
+    <div class="decoration toy-2">🎀</div>
     <div class="decoration toy-3">⭐</div>
 
     <header>
         <div class="container">
-            <nav class="navbar navbar-dark bg-transparent flex-column flex-sm-row">
+            <nav class="navbar navbar-dark bg-transparent flex-column flex-sm-row" >
                 <a class="navbar-brand" href="#">
-                    <img src="./assets/images/logo-Full.png" alt="MumKind Logo" style="height: 120px; max-width: 100%;">
+                    <img src="./assets/images/logo-Full.png" alt="MumKind Logo">
                 </a>
-                <div class="ml-sm-auto text-center text-sm-right mt-3 mt-sm-0">
+                <div class="ml-sm-auto text-center text-sm-right mt-3 mt-sm-0" style="
+    font-size: 20px;
+    font-weight: 600;">
                     <span class="navbar-text d-block d-sm-inline">
                         <a href="tel:+919724755825">+91 9724755825</a>
                     </span>
@@ -39,30 +212,39 @@
 
     <main class="my-auto text-center px-3">
         <div class="container">
-            <h1 class="page-title mumkind-text">We're coming soon</h1>
-            <p class="page-description mumkind-text">
+            <h1 class="page-title">We're coming soon</h1>
+            <p class="page-description">
                 Gentle care, every step of the way 🌸🍼<br>
-                Premium baby pampers, soft baby wipes, underarm pads, and sanitary pads — 
-                designed for comfort, hygiene, and everyday protection.<br>
-                Because you and your baby deserve only the best. 💕
+                Discover premium baby pampers, soft baby wipes, underarm pads, and sanitary pads —
+                crafted for comfort, hygiene, and everyday peace of mind.<br>
+                Because you and your baby deserve the very best. 💕
             </p>
 
-            <p class="mumkind-text" style="font-size: 16px; font-weight: bold;">
+            <p style="font-size: 18px; font-weight: bold; color: #ff6f91;">
                 🌟 Stay connected for exciting updates! 🌟
             </p>
 
+            <!-- Subscription Form -->
+            <div class="subscription-form">
+                <input type="email" placeholder="Enter your email for updates" style="margin-right: 15px;">
+                <button type="submit">Get Notified</button>
+            </div>
+
+            <!-- Countdown Timer -->
+            <div class="countdown"></div>
+
             <!-- Social Media Links -->
             <nav class="footer-social-links mt-4">
-                <a href="https://wa.me/919724755825" target="_blank" class="social-link" title="WhatsApp">
+                <a href="https://wa.me/919724755825" target="_blank" title="WhatsApp">
                     <i class="mdi mdi-whatsapp"></i>
                 </a>
-                <a href="https://www.instagram.com/mumkind.toys" target="_blank" class="social-link" title="Instagram">
+                <a href="https://www.instagram.com/mumkind.toys" target="_blank" title="Instagram">
                     <i class="mdi mdi-instagram"></i>
                 </a>
-                <a href="mailto:contact.mumkind@gmail.com" class="social-link" title="Email">
+                <a href="mailto:contact.mumkind@gmail.com" title="Email">
                     <i class="mdi mdi-email"></i>
                 </a>
-                <a href="tel:+919724755725" class="social-link" title="Call">
+                <a href="tel:+919724755725" title="Call">
                     <i class="mdi mdi-phone"></i>
                 </a>
             </nav>

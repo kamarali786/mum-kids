@@ -7,26 +7,14 @@ html, body {
 
 body {
   font-family: 'Karla', sans-serif;
-  background-image: url("../images/bg (2).png");
+  background-image: url("../images/bg.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  color: #2b4c8c;
+  background-attachment: fixed; /* Optional: for parallax effect */
+  color: #c7961c; /* Solid fallback color */
+  min-height: 100vh;
   padding-bottom: 75px;
-
-  /* Light overlay */
-  position: relative;
-}
-
-body::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(255, 255, 255, 0.6); /* lighten bg */
-  z-index: -1;
 }
 
 @media (min-width: 768px) {
@@ -41,21 +29,20 @@ body::before {
 }
 
 .navbar-brand img {
-  height: auto;
-  max-height: 100px;
-  max-width: 100%;
+  height: 21px;
 }
 
 .navbar-dark {
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding-top: 35px;
+  padding-bottom: 35px;
 }
 
 .navbar-dark .navbar-text {
-  color: #2b4c8c;
-  padding: 0 15px;
-  border-right: 2px solid #f0148c;
-  font-size: 16px;
+  color: #ffffff;
+  opacity: 1;
+  padding: 0 20px;
+  border-right: 1px solid #dfa300;
+  font-size: 18px;
   font-weight: bold;
   text-align: center;
 }
@@ -64,59 +51,45 @@ body::before {
   border-right: 0;
 }
 
-.navbar-dark .navbar-text a {
-  color: #2b4c8c;
-  text-decoration: none;
-}
-
-.navbar-dark .navbar-text a:hover {
-  color: #f0148c;
-}
-
 @media (max-width: 767px) {
   .navbar-dark {
     padding-bottom: 0;
-    text-align: center;
-  }
-
-  .navbar-dark .navbar-text {
-    display: block;
-    border: none;
-    margin-bottom: 10px;
   }
 }
 
 /* Title and description */
 .page-title {
-  font-size: clamp(28px, 5vw, 60px); /* responsive text */
+  font-size: 80px;
   font-weight: bold;
-  margin-bottom: 10px;
-  color: #f0148c;
-  text-align: center;
+  margin-bottom: 6px;
+}
+
+@media (max-width: 767px) {
+  .page-title {
+    font-size: 35px;
+    margin-bottom: 14px;
+  }
 }
 
 .page-description {
-  font-size: clamp(14px, 2vw, 18px);
-  margin: 20px auto 40px auto;
-  color: #333;
-  max-width: 90%;   /* expand full width */
-  line-height: 1.6;
-  text-align: center;
+  max-width: 465px;
+  font-size: 18px;
+  margin-bottom: 59px;
+}
+
+@media (max-width: 767px) {
+  .page-description {
+    font-size: 14px;
+  }
 }
 
 /* Paragraphs */
 p {
-  font-size: clamp(12px, 1.5vw, 14px);
-  margin-bottom: 18px;
-  color: #444;
+  font-size: 14px;
+  margin-bottom: 21px;
 }
 
 /* Social Media Icons */
-.footer-social-links {
-  text-align: center;
-  margin-top: 20px;
-}
-
 .footer-social-links .social-link {
   display: inline-block;
   text-align: center;
@@ -124,54 +97,34 @@ p {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: #f0148c;
-  color: #ffffff;
-  margin: 0 6px;
+  background: linear-gradient(135deg, #f6e27a, #f2c94c, #c7961c, #b17c00);
+  color: #000000;
+  margin-right: 16px;
   transition: all 0.3s ease-in-out;
 }
 
+.footer-social-links .social-link:last-child {
+  margin-right: 0;
+}
+
 .footer-social-links .social-link:hover {
-  background: #2b4c8c;
+  text-decoration: none;
+  background: #000000;
+  color: #ffffff;
 }
 
 /* Logo Image */
 .logo-img {
-  height: auto;
-  max-height: 60px;
+  height: 50px;
+  width: auto;
   max-width: 150px;
 }
 
-/* Simple Colored Text */
-.mumkind-text {
-  color: #f0148c;
+/* Gradient Text Effect */
+.gold-text {
+  background: linear-gradient(90deg, #c9960d, #f2d16b, #dfa300, #f9d423);
+  background-size: 200% auto;
   font-weight: bold;
-}
-
-/* Decorative Elements - Static (no animation) */
-.decoration {
-  position: fixed;
-  pointer-events: none;
-  z-index: -1;
-  opacity: 0.08;
-}
-
-.toy-1 {
-  top: 15%;
-  left: 5%;
-  font-size: clamp(20px, 3vw, 30px);
-  color: #f0148c;
-}
-
-.toy-2 {
-  top: 55%;
-  right: 8%;
-  font-size: clamp(18px, 3vw, 25px);
-  color: #2b4c8c;
-}
-
-.toy-3 {
-  bottom: 20%;
-  left: 10%;
-  font-size: clamp(22px, 4vw, 35px);
-  color: #4caf50;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
